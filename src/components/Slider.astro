@@ -1,0 +1,42 @@
+---
+import SliderPane from './SliderPane.astro'
+const { events } = Astro.props; 
+import ArrowLeft from "../assets/arrow-left.svg" 
+import ArrowRight from "../assets/arrow-right.svg" 
+---
+<div class="wrap">
+  <div class="glide hero">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        {events.map(ev => 
+        <li><SliderPane event={ev} /></li>
+        )}
+
+      </ul>
+    </div>
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="p-4 text-yellow-300 text-6xl absolute bottom-[100px] right-[20px] glide__arrow glide__arrow--prev" data-glide-dir=">"><ArrowRight class="w-12" /></button>
+      <button class="p-4 text-yellow-300 text-6xl absolute bottom-[100px] left-[20px] glide__arrow glide__arrow--next" data-glide-dir="<"><ArrowLeft class="w-12" /></button> 
+    </div>
+  </div>
+</div>
+<script>
+
+  import Glide from '@glidejs/glide';
+
+  const glider = new Glide('.glide').mount();
+
+</script>
+<style>
+  .wrap {
+    /* max-width: 900px; */
+    width: 100%;
+    margin: 0 auto;
+  }
+  .glide__slide {
+    border: 1px solid black;
+    line-height: 100px;
+    margin: 0;
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,38 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Card from '../components/Card.astro';
+import Slider from '../components/Slider.astro';
+import Layout from '../layouts/Layout.astro';
+import logo from '../assets/logo.png';
+
+import "../styles/global.css";
+const events = Object.values(import.meta.glob('./*.md', { eager: true }));
+const compareEvents = (ev1, ev2) => {
+if (ev1 && ev2) {
+     
+    return (ev1.frontmatter.date > ev2.frontmatter.date) ? 1 : -1;
+  }
+  return 0;
+}
+---
+<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+
+<Layout>
+  <!-- <Welcome /> -->
+  <Header />
+  <div class="w-full h-[900px]">
+    <Slider events={events} />
+  </div>
+  <main class="bg-[#f7a600]">
+    <h2 class="text-6xl text-center text-[#273583] pt-20 uppercase font-bold">Il volto dell'altro | 20 anni di Sguazzi</h2>
+    <div class="grid grid-cols-3 grid-rows-3 gap-12 px-48 pb-48 pt-24">
+      {events.sort(compareEvents).map(ev => <Card event={ev} />)}
+    </div>
+    
+  </main>
+
+  <Footer />
+
+</Layout>

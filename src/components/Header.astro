@@ -1,0 +1,41 @@
+---
+
+import logo from '../assets/logo.png';
+
+import "../styles/global.css";
+---
+<header class="bg-[#273583] px-4">
+  <nav class="max-w-full md:max-w-[80vw] flex justify-around items-center w-full md:w-[90%] p-2 gap-2  md:p-5 md:gap-5">
+    <div class="block">
+      <a href="/" alt="Homepage de 'Il volto dell'Altro'">
+        <img
+            class="hidden md:block"
+            src={logo.src}
+            alt=""
+            /></a>
+    </div>
+    <div class="overflow-y-auto md:overflow-y-visible">
+      <ul class="flex items-center gap-[4vw]">
+        <li>
+          <a href="" class="text-white text-sm md:text-lg uppercase">About</a>
+        </li>
+        <li>
+          <a href="" class="text-white text-sm md:text-lg uppercase">Programma</a>
+        </li>
+        <li>
+          <a href="" class="text-white text-sm md:text-lg uppercase">Partner</a>
+        </li>
+        <li>
+          <a href="" class="text-white text-sm md:text-lg uppercase">Contatti</a>
+        </li>
+      </ul>
+    </div>
+    <div class="">
+      <button
+          class="hidden bg-blue-500 px-2 py-2 text-white rounded-md hover:text-red-300"
+                 >
+                 Toggle
+      </button>
+    </div>
+  </nav>
+</header>

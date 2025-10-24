@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --default-font-family: "Roboto";
+}
+
+body {
+  background-color: #273583;
+}
+
+nav a,
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: "El Messiri", serif;
+}
+.event-description p {
+  margin-bottom: 20px;
+}
+.event-title::after,
+.event-title::before {
+  display: inline-block;
+  background-color: transparent;
+  width: 50px;
+  height: 6px;
+  border-top: 1px solid white;
+  content: ' ';
+  margin-inline: 10px;
+}
+
+@media (width >= 48rem) { 
+  .event-title::after,
+  .event-title::before {
+    width: 100px;
+    height: 18px;
+  }
+
+}
