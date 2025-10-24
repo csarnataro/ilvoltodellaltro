@@ -7,6 +7,10 @@
   --default-font-family: "Roboto";
 }
 
+body {
+  background-color: #273583;
+}
+
 nav a,
 :is(h1, h2, h3, h4, h5, h6) {
   font-family: "El Messiri", serif;

@@ -2,6 +2,7 @@
 const { frontmatter } = Astro.props;
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import MapMarker from '../assets/map-marker.svg'
 ---
 <!doctype html>
 <html lang="en">
@@ -25,7 +26,7 @@ import Footer from '../components/Footer.astro'
       </h2>
       <div class="text-center uppercase text-2xl mb-12">
         <a class="hover:underline" href={frontmatter.map_url} alt={`Come raggiungere ${frontmatter.city} ${frontmatter.venue}`}>
-          <img src="/map-marker.svg" class="w-5 inline" style="color: red;" />
+          <MapMarker class="w-5 h-5 inline" />
         {frontmatter.city} | {frontmatter.venue}
         </a>
       </div>

@@ -2,7 +2,7 @@
 
 const { event, event: { frontmatter }} = Astro.props;
 import "../styles/global.css";
-
+import CardBg from '../assets/card-bg.gif'
 const hasThumb = Boolean(frontmatter.thumb);
 const thumbUrl = hasThumb ? frontmatter.thumb : 'card-bg.gif';
 const color = hasThumb ? 'text-white' : 'text-[#273583]' ;
@@ -19,7 +19,7 @@ const mapMarker = hasThumb ? '-white': '-blue';
       </h3>
     </div>
     <div class="text-center">
-      <img src={`/map-marker${mapMarker}.svg`} class="w-5 inline " />
+      <img src={`/map-marker${mapMarker}.svg`} class="w-5 h-5 inline " />
       {frontmatter.city}
     </div>
     <div class="w-full text-center">
