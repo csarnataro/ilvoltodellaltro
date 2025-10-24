@@ -6,8 +6,13 @@ import Card from '../components/Card.astro';
 import Slider from '../components/Slider.astro';
 import Layout from '../layouts/Layout.astro';
 import logo from '../assets/logo.png';
-
+/*
+*
+<link rel="stylesheet" href="@glidejs/glide/dist/css/glide.core.min.css">
+*/
 import "../styles/global.css";
+import "@glidejs/glide/dist/css/glide.core.min.css"
+
 const events = Object.values(import.meta.glob('./*.md', { eager: true }));
 const compareEvents = (ev1, ev2) => {
 if (ev1 && ev2) {
@@ -17,7 +22,6 @@ if (ev1 && ev2) {
   return 0;
 }
 ---
-<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
 
 <Layout>
   <!-- <Welcome /> -->
