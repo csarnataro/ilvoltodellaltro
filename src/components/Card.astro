@@ -3,11 +3,13 @@
 const { event, event: { frontmatter }} = Astro.props;
 import "../styles/global.css";
 import CardBg from '../assets/card-bg.gif'
+import MapMarkerWhite from '../assets/map-marker-white.svg'
+import MapMarkerBlue from '../assets/map-marker-blue.svg'
 const hasThumb = Boolean(frontmatter.thumb);
 const thumbUrl = hasThumb ? frontmatter.thumb : 'card-bg.gif';
 const color = hasThumb ? 'text-white' : 'text-[#273583]' ;
 const filter = hasThumb ? 'grayscale': '';
-const mapMarker = hasThumb ? '-white': '-blue';
+const MapMarker = hasThumb ? MapMarkerWhite : MapMarkerBlue;
 ---
 <span class="text-white text-[#273583] hidden"></span>
 <a href={event.url} alt={`Scheda evento ${frontmatter.title}`} class={`${color} `}>
@@ -19,7 +21,7 @@ const mapMarker = hasThumb ? '-white': '-blue';
       </h3>
     </div>
     <div class="text-center">
-      <img src={`/map-marker${mapMarker}.svg`} class="w-5 h-5 inline " />
+      <MapMarker class="w-5 h-5 inline " />
       {frontmatter.city}
     </div>
     <div class="w-full text-center">
