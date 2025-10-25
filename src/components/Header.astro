@@ -1,6 +1,7 @@
 ---
 
 import logo from '../assets/logo.png';
+import logoSmall from '../assets/logo_sm.png';
 
 import "../styles/global.css";
 ---
@@ -8,11 +9,9 @@ import "../styles/global.css";
   <nav class="max-w-full md:max-w-[80vw] flex justify-around items-center w-full md:w-[90%] p-2 gap-2  md:p-5 md:gap-5">
     <div class="block">
       <a href="/" alt="Homepage de 'Il volto dell'Altro'">
-        <img
-            class="hidden md:block"
-            src={logo.src}
-            alt=""
-            /></a>
+        <img src={logo.src} class="hidden md:block" />
+        <img src={logoSmall.src} class="md:hidden block w-6 h-6" />
+      </a>
     </div>
     <div class="overflow-y-auto md:overflow-y-visible">
       <ul class="flex items-center gap-[4vw]">

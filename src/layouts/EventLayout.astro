@@ -15,13 +15,13 @@ import MapMarker from '../assets/map-marker.svg'
 	</head>
 	<body>
     <Header />
-    <div class="w-full h-96 md:h-[80vh] pt-32 bg-cover bg-no-repeat" style={`background-image: url(/${frontmatter.image})`}>
+    <div class="w-full h-96 md:h-[80vh] pt-32 bg-center bg-cover bg-no-repeat" style={`background-image: url(/${frontmatter.image})`}>
       <h2 class="text-white w-full text-center text-xl md:text-6xl">
         <span class="event-title">{frontmatter.title}</span>
       </h2>
     </div>
     <div class=" p-12 md:p-48 mx-auto bg-[#273583] text-[#d4d8e9]">
-      <h2 class="text-6xl text-center uppercase mb-12">
+      <h2 class="text-4xl md:text-6xl text-center uppercase mb-12">
         {frontmatter.visible_date}
       </h2>
       <div class="text-center uppercase text-2xl mb-12">
@@ -35,11 +35,11 @@ import MapMarker from '../assets/map-marker.svg'
       </div>
     </div>
     <div class="bg-[#f7a600] py-8 md:py-32 px-12 md:px-48 text-center">
-      <h2 class="text-4xl md:text-6xl text-[#273583]">{frontmatter.pricing || "Spettacolo a ingresso libero"}</h2>
-      {(frontmatter.cta) && (<a href={frontmatter.cta_url} target="_blank" class="uppercase rounded-md bg-[#273583] py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2 my-12 inline-block">{frontmatter.cta}</a>)}
-      <div class="uppercase text-[#273583]">
-      {frontmatter.cta_info}
-      </div>
+      <h2 class="text-4xl md:text-6xl text-[#273583]">
+
+
+        <Fragment set:html={frontmatter.pricing || "Spettacolo a ingresso libero"} />
+
     </div>
     <Footer />
 	</body>

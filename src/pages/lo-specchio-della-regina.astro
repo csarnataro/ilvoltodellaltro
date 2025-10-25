@@ -1,0 +1,62 @@
+---
+import EventLayout from '../layouts/EventLayout.astro';
+
+export const frontmatter = {
+date: "2025-11-15 21:00",
+visible_date: "Sabato 15 Novembre Ore 21:00",
+city: "Dalmine",
+venue: "Teatro Civico",
+map_url: "https://maps.app.goo.gl/p1o52PT5DyTSk8aU7",
+title: "Lo specchio della regina",
+slug: "lo-specchio-della-regina",
+image: "lo-specchio-della-regina.jpg",
+thumb: "lo-specchio-della-regina.jpg",
+layout: "../layouts/EventLayout.astro",
+cta: "Prenota",
+cta_url: "https://www.eventbrite.it/e/biglietti-lo-specchio-della-regina-1716439539869",
+cta_info: "Evento solo su prenotazione",
+pricing: `
+<h2 class="text-6xl text-[#273583]">Spettacolo a ingresso libero</h2>
+<a href="https://www.eventbrite.it/e/biglietti-lo-specchio-della-regina-1716439539869" target="_blank" 
+  class="uppercase rounded-md bg-[#273583] py-4 px-8 border border-transparent text-center text-lg text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2 my-12 inline-block">Prenota</a>
+<div class="uppercase text-[#273583] text-xl">
+Evento solo su prenotazione 
+</div>
+` 
+}
+
+/*
+
+
+        {frontmatter.pricing || "Spettacolo a ingresso libero"}</h2>
+      {(frontmatter.cta) && (<a href={frontmatter.cta_url} target="_blank" class="uppercase rounded-md bg-[#273583] py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2 my-12 inline-block">{frontmatter.cta}</a>)}
+      <div class="uppercase text-[#273583]">
+      {frontmatter.cta_info}
+      </div>
+
+*/
+---
+<EventLayout frontmatter={frontmatter}>
+  
+  <p class="font-bold">Di: Eleonora Chiocchini e Antonio Viganò</p>
+
+  <p>Con Jason Mattia De Majo, Maria Magdolna Johannes, Rocco Ventura</p>
+
+  <p>La celebre fiaba di Biancaneve questa volta vede come protagonisti due improbabili personaggi:
+una Regina affaticata dal dover essere sempre “la più bella del Reame” e il suo Specchiocheche, stanco di dover ripetere sempre “quello che fanno gli altri” cercherà una via di fuga. La Regina,
+orfana della sua immagine riflessa, dovrà dunque trovare un modo per riconquistare
+la fiducia dello Specchio.</p>
+
+  <p>Un appassionante racconto che smonta e rimonta una delle fiabe più celebri di tutti
+  i tempi, donandoci una prospettiva del tutto nuova sulla bellezza della diversità.</p>
+
+  <p class="italic">Il pubblico è incantato. In fondo, Lo specchio della regina è un percorso nei
+meandri dell'adolescenza, un cammino
+che nasce nella tracima. E nella consapevolezza dellimne
+trova lo slancio per lidrarsi oltre paure e vulnerabilita. Per
+nutrirsi ai versi e rinascere diversi.
+E assurgere all'assoluto, trovando rifugio negli inestricabili
+segreti della poesia e della danza.</p>
+  <p class="text-sm"> (recensione di Vincenzo Sardelli, apparsa su Krapps Last Post)</p>
+
+</EventLayout>

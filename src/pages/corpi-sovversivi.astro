@@ -1,0 +1,40 @@
+---
+import EventLayout from '../layouts/EventLayout.astro';
+
+export const frontmatter = {
+date: "2025-11-13 21:00",
+image: "corpi-sovversivi.jpg",
+title: "Corpi Sovversivi",
+visible_date: "Giovedì 13 novembre ore 21.00",
+slug: "corpi-sovversivi ",
+layout: "../layouts/EventLayout.astro",
+city: "Levate",
+venue: "Sala Civica",
+map: "https://maps.app.goo.gl/p1o52PT5DyTSk8aU7",
+}
+
+/*
+
+
+        {frontmatter.pricing || "Spettacolo a ingresso libero"}</h2>
+      {(frontmatter.cta) && (<a href={frontmatter.cta_url} target="_blank" class="uppercase rounded-md bg-[#273583] py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2 my-12 inline-block">{frontmatter.cta}</a>)}
+      <div class="uppercase text-[#273583]">
+      {frontmatter.cta_info}
+      </div>
+
+*/
+---
+<EventLayout frontmatter={frontmatter}>
+  <p class="font-bold">La serata di teatro e festa “Corpi sovversivi. Porte aperte del laboratorio teatrale di Sguazzi” a cura di Silvia Briozzo.</p>
+
+  <p>
+  Si tratta di una serata nel corso della quale i partecipanti al laboratorio apriranno la sala in cui abitualmente si incontrano per mostrare il loro percorso attraverso improvvisazioni, esercizi e momenti di condivisione e festa. 
+  </p>
+  <p>
+  “Corpi sovversivi” è il laboratorio teatrale gratuito di Sguazzi, ospitato da anni dal Comune di Levate, e che vede la partecipazione di cittadini di diversa età, provenienza e abilità. 
+  </p>
+  <p>
+  È condotto dalla regista Silvia Briozzo.
+  </p>
+  
+</EventLayout>

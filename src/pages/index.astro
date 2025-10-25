@@ -13,7 +13,11 @@ import logo from '../assets/logo.png';
 import "../styles/global.css";
 import "@glidejs/glide/dist/css/glide.core.min.css"
 
-const events = Object.values(import.meta.glob('./*.md', { eager: true }));
+const events = Object.values(
+import.meta.glob([
+'./corpi-sovversivi.astro',
+'./lo-specchio-della-regina.astro'
+], { eager: true }));
 const compareEvents = (ev1, ev2) => {
 if (ev1 && ev2) {
      
@@ -26,13 +30,17 @@ if (ev1 && ev2) {
 <Layout>
   <!-- <Welcome /> -->
   <Header />
-  <div class="w-full h-[900px]">
+  <div class="hidden md:block md:w-full md:h-[900px]">
     <Slider events={events} />
   </div>
   <main class="bg-[#f7a600]">
-    <h2 class="text-6xl text-center text-[#273583] pt-20 uppercase font-bold">Il volto dell'altro | 20 anni di Sguazzi</h2>
-    <div class="grid grid-cols-3 grid-rows-3 gap-12 px-48 pb-48 pt-24">
-      {events.sort(compareEvents).map(ev => <Card event={ev} />)}
+    <h2 class="flex flex-col md:flex-row justify-center gap-2 text-xl md:text-4xl text-center text-[#273583] pt-20 uppercase font-bold">
+      <span class="">Il volto dell'altro</span> 
+      <span class="hidden md:inline">|</span>
+      <span class="">20 anni di Sguazzi</span>
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-3 gap-12 px-4 md:px-48 pb-48 pt-24">
+      {events.sort(compareEvents).map(ev => <Card event={ev} />) }
     </div>
     
   </main>

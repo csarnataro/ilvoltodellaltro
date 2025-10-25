@@ -23,9 +23,11 @@ import ArrowRight from "../assets/arrow-right.svg"
 <script>
 
   import Glide from '@glidejs/glide';
+  const glider = new Glide('.glide', { 
+    autoplay: 4000, 
+    hoverpause: true, 
 
-  const glider = new Glide('.glide').mount();
-
+  }).mount();
 </script>
 <style>
   .wrap {
