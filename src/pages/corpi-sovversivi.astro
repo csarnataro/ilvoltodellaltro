@@ -4,6 +4,8 @@ import EventLayout from '../layouts/EventLayout.astro';
 export const frontmatter = {
 date: "2025-11-13 21:00",
 image: "corpi-sovversivi.jpg",
+thumb: "corpi-sovversivi.jpg",
+slider: "corpi-sovversivi.jpg",
 title: "Corpi Sovversivi",
 visible_date: "Giovedì 13 novembre ore 21.00",
 slug: "corpi-sovversivi ",
@@ -13,16 +15,6 @@ venue: "Sala Civica",
 map: "https://maps.app.goo.gl/p1o52PT5DyTSk8aU7",
 }
 
-/*
-
-
-        {frontmatter.pricing || "Spettacolo a ingresso libero"}</h2>
-      {(frontmatter.cta) && (<a href={frontmatter.cta_url} target="_blank" class="uppercase rounded-md bg-[#273583] py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2 my-12 inline-block">{frontmatter.cta}</a>)}
-      <div class="uppercase text-[#273583]">
-      {frontmatter.cta_info}
-      </div>
-
-*/
 ---
 <EventLayout frontmatter={frontmatter}>
   <p class="font-bold">La serata di teatro e festa “Corpi sovversivi. Porte aperte del laboratorio teatrale di Sguazzi” a cura di Silvia Briozzo.</p>

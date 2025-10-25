@@ -35,10 +35,10 @@ import MapMarker from '../assets/map-marker.svg'
       </div>
     </div>
     <div class="bg-[#f7a600] py-8 md:py-32 px-12 md:px-48 text-center">
-      <h2 class="text-4xl md:text-6xl text-[#273583]">
 
 
-        <Fragment set:html={frontmatter.pricing || "Spettacolo a ingresso libero"} />
+      <Fragment set:html={frontmatter.pricing || 
+        `<h2 class="text-6xl text-[#273583]">Spettacolo a ingresso libero</h2>`} />
 
     </div>
     <Footer />

@@ -9,8 +9,9 @@ venue: "Teatro Civico",
 map_url: "https://maps.app.goo.gl/p1o52PT5DyTSk8aU7",
 title: "Lo specchio della regina",
 slug: "lo-specchio-della-regina",
-image: "lo-specchio-della-regina.jpg",
-thumb: "lo-specchio-della-regina.jpg",
+image: "specchio_image.png",
+thumb: "specchio_thumb.png",
+slider: "specchio_slider.png",
 layout: "../layouts/EventLayout.astro",
 cta: "Prenota",
 cta_url: "https://www.eventbrite.it/e/biglietti-lo-specchio-della-regina-1716439539869",
@@ -25,16 +26,6 @@ Evento solo su prenotazione
 ` 
 }
 
-/*
-
-
-        {frontmatter.pricing || "Spettacolo a ingresso libero"}</h2>
-      {(frontmatter.cta) && (<a href={frontmatter.cta_url} target="_blank" class="uppercase rounded-md bg-[#273583] py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2 my-12 inline-block">{frontmatter.cta}</a>)}
-      <div class="uppercase text-[#273583]">
-      {frontmatter.cta_info}
-      </div>
-
-*/
 ---
 <EventLayout frontmatter={frontmatter}>
   

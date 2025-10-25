@@ -1,0 +1,21 @@
+---
+import EventLayout from '../layouts/EventLayout.astro';
+
+export const frontmatter = {
+date: "2025-11-16 21:00",
+visible_date: "Domenica 16 Novembre Ore 21:00",
+city: "Seriate",
+venue: "Centro sportivo",
+map_url: "https://maps.app.goo.gl/p1o52PT5DyTSk8aU7",
+title: "Il ballo dei 20 anni",
+image: "volto_cover.png",
+pricing: " "
+}
+
+---
+<EventLayout frontmatter={frontmatter}>
+  <p class="font-bold">Il ballo dei 20 anni</p>
+  <p>
+  Il ballo dei 20 anni, dj disco dance 
+  </p>
+</EventLayout>

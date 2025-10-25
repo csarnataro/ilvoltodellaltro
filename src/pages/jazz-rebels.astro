@@ -1,0 +1,24 @@
+---
+import EventLayout from '../layouts/EventLayout.astro';
+
+export const frontmatter = {
+date: "2025-11-16 18:30",
+visible_date: "Domenica 16 Novembre Ore 18:30",
+city: "Seriate",
+venue: "Centro sportivo",
+map_url: "https://maps.app.goo.gl/p1o52PT5DyTSk8aU7",
+title: "HENRIK ANDERSEN & THE JAZZ REBELS",
+image: "jazz-rebels.jpg",
+thumb: "jazz-rebels.jpg",
+slider: "jazz-rebels.jpg",
+}
+
+---
+<EventLayout frontmatter={frontmatter}>
+  <p class="font-bold">Concerto di Henrik Andersen &amp; The Jazz Rebels</p>
+  <p>
+  Si tratta di una proposta che vuole restituire al progetto una dimensione più spontanea e conviviale di incontro fra le persone; la scelta di uno spazio performativo non convenzionale e la proposta artistica stessa concorrono a creare un’occasione di festa e socialità, coerente nella forma e nei contenuti con l’intera proposta progettuale. Si tratta di una proposta musicale e performativa che è un ponte fra oriente e occidente, “un progetto musicale in sette ottavi, una ricetta che ha il sapore del mondo”.
+  </p>
+  <p>
+ La band è nata dall’idea del musicista danese Henrik Andersen, accoglie elementi che arrivano da diversi generi e culture, tutti al servizio della contaminazione delle arti e della libera espressione. il gruppo dà vita a brani originali che spaziano dal jazz al funky, in una cornice teatrale di movimento e presenza scenica. </p>
+</EventLayout>

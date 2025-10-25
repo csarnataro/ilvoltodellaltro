@@ -3,46 +3,73 @@ import Welcome from '../components/Welcome.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Card from '../components/Card.astro';
+import PartnerCard from '../components/PartnerCard.astro';
+import EmptyCard from '../components/EmptyCard.astro';
 import Slider from '../components/Slider.astro';
 import Layout from '../layouts/Layout.astro';
 import logo from '../assets/logo.png';
-/*
-*
-<link rel="stylesheet" href="@glidejs/glide/dist/css/glide.core.min.css">
-*/
 import "../styles/global.css";
 import "@glidejs/glide/dist/css/glide.core.min.css"
+
+const compareEvents = (ev1, ev2) => {
+if (ev1 && ev2) {
+
+return (ev1.frontmatter.date > ev2.frontmatter.date) ? 1 : -1;
+}
+return 0;
+}
 
 const events = Object.values(
 import.meta.glob([
 './corpi-sovversivi.astro',
-'./lo-specchio-della-regina.astro'
-], { eager: true }));
-const compareEvents = (ev1, ev2) => {
-if (ev1 && ev2) {
-     
-    return (ev1.frontmatter.date > ev2.frontmatter.date) ? 1 : -1;
-  }
-  return 0;
-}
+'./lo-specchio-della-regina.astro',
+'./pupille.astro',
+'./rinunce.astro',
+'./il-volto-dell-altro.astro',
+'./assemblea-generale.astro',
+'./il-ballo-dei-20-anni.astro',
+'./jazz-rebels.astro'
+], { eager: true }))
+.sort(compareEvents);
+const sliderEvents = events.filter((ev) => Boolean(ev.frontmatter.slider))
+const gridEvents = [...events.slice(0, 4), "", ...events.slice(4)];
+
 ---
 
 <Layout>
-  <!-- <Welcome /> -->
   <Header />
+  <!-- <pre>{JSON.stringify(events, null, 2)}</pre> -->
   <div class="hidden md:block md:w-full md:h-[900px]">
-    <Slider events={events} />
+    <Slider events={sliderEvents} />
   </div>
-  <main class="bg-[#f7a600]">
-    <h2 class="flex flex-col md:flex-row justify-center gap-2 text-xl md:text-4xl text-center text-[#273583] pt-20 uppercase font-bold">
-      <span class="">Il volto dell'altro</span> 
-      <span class="hidden md:inline">|</span>
-      <span class="">20 anni di Sguazzi</span>
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-3 gap-12 px-4 md:px-48 pb-48 pt-24">
-      {events.sort(compareEvents).map(ev => <Card event={ev} />) }
-    </div>
-    
+  <main >
+    <section class="bg-[#f7a600]">
+      <a name="programma"></a>
+      <h2 class="flex flex-col md:flex-row justify-center gap-2 text-xl md:text-4xl text-center text-[#273583] pt-20 uppercase font-bold">
+        <span class="">Il volto dell'altro</span> 
+        <span class="hidden md:inline">|</span>
+        <span class="">20 anni di Sguazzi</span>
+      </h2>
+      <div class="grid grid-cols-1  lg:grid-cols-3 md:grid-rows-3 gap-12 px-4 md:px-48 pb-48 pt-24">
+        {gridEvents.map((ev, idx) => {
+        if (idx == 4) {
+        return <EmptyCard />;
+        }
+        return <Card event={ev} />
+        }) }
+      </div>
+    </section> 
+    <section class="bg-white">
+      <h2 class="flex flex-col md:flex-row justify-center gap-2 text-xl md:text-4xl text-center text-[#273583] pt-20 uppercase font-bold">
+        I nostri partner
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-4  gap-12 px-4 md:px-48 pb-48 pt-24">
+        <PartnerCard name="Provincia di Bergamo" image="/card-bg.gif" />
+        <PartnerCard name="Comune di Ciserano" image="/card-bg.gif" />
+        <PartnerCard name="Comune di Levate" image="/card-bg.gif" />
+        <PartnerCard name="Comune di Dalmine" image="/card-bg.gif" />
+      </div>
+    </section>
   </main>
 
   <Footer />
