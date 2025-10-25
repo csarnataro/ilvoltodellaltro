@@ -1,0 +1,55 @@
+---
+const { frontmatter } = Astro.props;
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import MapMarker from '../assets/map-marker.svg'
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title} - Il volto dell'Altro</title>
+	</head>
+	<body>
+    <Header />
+    <div class="w-full h-6 pt-32 bg-center bg-cover bg-no-repeat" >
+      <h2 class="text-white w-full text-center text-xl md:text-6xl">
+        <span class="event-title">{frontmatter.title}</span>
+      </h2>
+    </div>
+    <div class=" p-12 md:p-48 mx-auto bg-[#273583] text-[#d4d8e9]">
+      <h2 class="text-4xl md:text-6xl text-center uppercase mb-12">
+        {frontmatter.visible_date}
+      </h2>
+      <div class="text-center uppercase text-2xl mb-12">
+        <a class="hover:underline" href={frontmatter.map_url} alt={`Come raggiungere ${frontmatter.city} ${frontmatter.venue}`}>
+          <MapMarker class="w-5 h-5 inline" />
+        {frontmatter.city} | {frontmatter.venue}
+        </a>
+      </div>
+      <div class="event-description md:columns-2 columns-1 text-xl gap-15 text-justify">
+      <slot />
+      </div>
+    </div>
+    <div class="bg-[#f7a600] py-8 md:py-32 px-12 md:px-48 text-center">
+
+
+      <Fragment set:html={frontmatter.pricing || 
+        `<h2 class="text-6xl text-[#273583]">Spettacolo a ingresso libero</h2>`} />
+
+    </div>
+    <Footer />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
