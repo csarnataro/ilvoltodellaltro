@@ -1,19 +1,18 @@
 ---
 
 import logo from '../assets/logo.png';
-import logoSmall from '../assets/logo_sm.png';
+import Hamburger from '../assets/hamburger.svg';
 
 import "../styles/global.css";
 ---
-<header class="bg-[#273583] px-4">
-  <nav class="max-w-full md:max-w-[80vw] flex justify-around items-center w-full md:w-[90%] p-2 gap-2  md:p-5 md:gap-5">
+<header class="bg-[#273583] px-4 ">
+  <nav class="hidden md:flex max-w-full lg:max-w-[80vw]  justify-around items-center w-full lg:w-[90%] p-2 gap-2  md:p-5 md:gap-2">
     <div class="block">
       <a href="/" alt="Homepage de 'Il volto dell'Altro'">
-        <img src={logo.src} class="hidden md:block" />
-        <img src={logoSmall.src} class="md:hidden block w-6 h-6" />
+        <img src={logo.src} class="md:block" />
       </a>
     </div>
-    <div class="overflow-y-auto md:overflow-y-visible">
+    <div class="overflow-x-auto md:overflow-x-visible overflow-y-hidden " >
       <ul class="flex items-center gap-[4vw]">
         <li>
           <a href="/progetto" class="text-white text-sm md:text-lg uppercase">Progetto</a>
@@ -29,12 +28,52 @@ import "../styles/global.css";
         </li>
       </ul>
     </div>
-    <div class="">
-      <button
-          class="hidden bg-blue-500 px-2 py-2 text-white rounded-md hover:text-red-300"
-                 >
-                 Toggle
+    <div></div>
+    <!-- <div class=""> -->
+    <!--   <button -->
+    <!--       class="hidden bg-blue-500 px-2 py-2 text-white rounded-md hover:text-red-300" -->
+    <!--              > -->
+    <!--              Toggle -->
+    <!--   </button> -->
+    <!-- </div> -->
+  </nav>
+  <nav class="md:hidden items-start flex-col max-w-full flex justify-around items-center w-full p-2 gap-2  md:p-5 md:gap-5">
+    <div class="flex flex-row justify-between w-full items-center">
+      <a href="/" alt="Homepage de 'Il volto dell'Altro'" class="w-1/2">
+        <img src={logo.src} class="block " />
+      </a>
+      <button class="border border-blue-100 px-4 py-2 text-white rounded-md hover:text-red-300">
+        <Hamburger onClick="toggleMenu()" fill="white" class="w-6 h-6" stroke="white" /> 
       </button>
+    </div>
+    <div class="w-full" >
+      <ul id="responsive-menu" class="hidden flex flex-col  gap-[4vw] text-center">
+        <li>
+          <a href="/progetto" class="text-white text-sm md:text-lg uppercase">Progetto</a>
+        </li>
+        <li>
+          <a href="/#programma" class="text-white text-sm md:text-lg uppercase">Programma</a>
+        </li>
+        <li>
+          <a href="#partner" class="text-white text-sm md:text-lg uppercase">Partner</a>
+        </li>
+        <li>
+          <a href="#contatti" class="text-white text-sm md:text-lg uppercase">Contatti</a>
+        </li>
+      </ul>
     </div>
   </nav>
 </header>
+<script is:inline>
+  function toggleMenu() {
+    const rm = document.getElementById("responsive-menu");
+    if (rm.classList.contains("block")) {
+      rm.classList.remove("block");
+      rm.classList.add("hidden");
+    } else {
+      rm.classList.remove("hidden");
+      rm.classList.add("block");
+
+    }
+  }
+</script>
