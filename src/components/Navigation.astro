@@ -1,0 +1,20 @@
+---
+import ArrowLeft from "../assets/arrow-left.svg" 
+import ArrowRight from "../assets/arrow-right.svg" 
+const {prev_url, next_url} = Astro.props;
+---
+<div class="py-12 flex flex-row justify-between">
+  {
+    Boolean(prev_url) ?
+    <a href={prev_url || ""} class="underline"><ArrowLeft class="inline w-6 h-6"/>Precedente</a> :
+    <div class="text-gray-400"><ArrowLeft class="inline w-6 h-6"/>Precedente</div>
+  }
+
+  {
+    Boolean(next_url) ?
+    <a href={next_url || ""}>Successivo <ArrowRight class="inline w-6 h-6" /></a> :
+    <div class="text-gray-400">Successivo <ArrowRight class="inline w-6 h-6" /></div>
+    
+  }
+</div>
+

@@ -2,7 +2,10 @@
 const { frontmatter } = Astro.props;
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import Navigation from '../components/Navigation.astro' 
 import MapMarker from '../assets/map-marker.svg'
+import ArrowLeft from "../assets/arrow-left.svg" 
+import ArrowRight from "../assets/arrow-right.svg" 
 ---
 <!doctype html>
 <html lang="en">
@@ -33,6 +36,7 @@ import MapMarker from '../assets/map-marker.svg'
       <div class="event-description md:columns-2 columns-1 text-xl gap-15 ">
       <slot />
       </div>
+      <Navigation prev_url={frontmatter.prev_url} next_url={frontmatter.next_url} />
     </div>
     <div class="bg-[#f7a600] py-8 md:py-32 px-12 md:px-48 text-center">
 

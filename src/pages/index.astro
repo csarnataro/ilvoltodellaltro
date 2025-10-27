@@ -18,19 +18,22 @@ return (ev1.frontmatter.date > ev2.frontmatter.date) ? 1 : -1;
 }
 return 0;
 }
+const eventPages = import.meta.glob([
+'./corpi-sovversivi.astro',
+'./rinunce.astro',
+'./pupille.astro',
+'./il-volto-dell-altro.astro',
+'./lo-specchio-della-regina.astro',
+'./assemblea-generale.astro',
+'./jazz-rebels.astro',
+'./il-ballo-dei-20-anni.astro',
+] , { eager: true })
 
 const events = Object.values(
-import.meta.glob([
-'./corpi-sovversivi.astro',
-'./lo-specchio-della-regina.astro',
-'./pupille.astro',
-'./rinunce.astro',
-'./il-volto-dell-altro.astro',
-'./assemblea-generale.astro',
-'./il-ballo-dei-20-anni.astro',
-'./jazz-rebels.astro'
-], { eager: true }))
-.sort(compareEvents);
+eventPages
+).sort(compareEvents);
+
+// console.dir(JSON.stringify(enrichedEvents, null, 2));
 const sliderEvents = events.filter((ev) => Boolean(ev.frontmatter.slider))
 const gridEvents = [...events.slice(0, 4), "", ...events.slice(4)];
 
@@ -53,7 +56,7 @@ const gridEvents = [...events.slice(0, 4), "", ...events.slice(4)];
       <div class="grid grid-cols-1  lg:grid-cols-3 md:grid-rows-3 gap-12 px-4 md:px-48 pb-48 pt-24">
         {gridEvents.map((ev, idx) => {
         if (idx == 4) {
-        return <EmptyCard />;
+          return <EmptyCard />;
         }
         return <Card event={ev} />
         }) }
