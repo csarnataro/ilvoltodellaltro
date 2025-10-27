@@ -12,7 +12,7 @@ const {prev_url, next_url} = Astro.props;
 
   {
     Boolean(next_url) ?
-    <a href={`/${next_url}` || ""}>Successivo <ArrowRight class="inline w-6 h-6" /></a> :
+    <a href={`/${next_url}` || ""} class="underline">Successivo <ArrowRight class="inline w-6 h-6" /></a> :
     <div class="text-gray-400">Successivo <ArrowRight class="inline w-6 h-6" /></div>
     
   }
