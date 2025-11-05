@@ -1,0 +1,47 @@
+---
+import EventLayout from '../layouts/EventLayout.astro';
+
+export const frontmatter = {
+prev_url: "il-volto-dell-altro",
+next_url: "assemblea-generale",
+date: "2025-11-15 21:00",
+visible_date: "Sabato 15 Novembre Ore 21:00",
+city: "Dalmine", // OK
+venue: "Teatro Civico",
+map_url: "https://maps.app.goo.gl/p1o52PT5DyTSk8aU7",
+title: "Superabile",
+slug: "superabile",
+image: "superabile_image.jpg",
+thumb: "superabile_thumb.jpg",
+slider: "superabile_slider.jpg",
+layout: "../layouts/EventLayout.astro",
+cta: "Prenota",
+cta_url: "https://www.eventbrite.it/e/biglietti-superabile-1716439539869",
+cta_info: "",
+pricing: `
+<h2 class="text-6xl text-[#273583]">Spettacolo a ingresso gratuito</h2>
+<a href="https://www.eventbrite.it/e/biglietti-superabile-1716439539869" target="_blank" 
+  class="uppercase rounded-md bg-[#273583] py-4 px-8 border border-transparent text-center text-lg text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2 my-12 inline-block">Prenota</a>
+<div class="uppercase text-[#273583] text-xl">
+Prenotazione consigliata
+</div>
+` 
+}
+
+---
+<EventLayout frontmatter={frontmatter}>
+  
+  <p class="font-bold">Spettacolo di Teatro la Ribalta</p>
+
+  <p>Di: Michele Eynard</p>
+
+  <p>Con: Mathias Dallinger, Melanie Goldner, Paolo Grossi, Jason De Majo</p>
+
+  <p>E voi che ci guardate, come ci vedete?</p>
+
+  <p>SUPERABILE parla del mondo, di quel mondo che non si ferma alla prima occhiata, ma supera lo stereotipo della definizione. Racconta la disabilità, partendo dalla conoscenza intima delle persone, tutte così diverse e complesse. Un fumetto teatrale dove un regista disegnatore dotato di lavagna luminosa crea per il pubblico un mondo fatto di segni all’interno del quale gli attori sono immersi come in una sorta di fumetto vivente.</p>
+
+  <p>“E voi che ci guardate, come ci vedete?” chiedono i cinque attori, di cui due in carrozzina, che si raccontano, portando idealmente nel viaggio lo spettatore. Il loro quotidiano è lo spazio che racchiude i sogni, le gioie, ma anche gli sguardi degli altri, la necessità di essere accompagnati, la mancanza di intimità, la perdita di autonomia che è quindi la perdita di un privato. Si sorride e ci si commuove, con leggerezza e ironia, grazie alla possibilità data da questi ragazzi di fare entrare gli spettatori nelle loro vite, di aprire al loro mondo, con uno sguardo capace anche di irridere l’asprezza della realtà. E sono, i loro, piedi di vento e di acqua, di sole e di sguardi, che ci fanno volare via legati alle vele che gonfieranno per noi. Perché gli attori speciali hanno un sogno speciale.</p>
+
+  <p class="italic">Lo spettacolo "Lo specchio delle regina", programmato inizialmente per il 15 novembre, verrà sostituito, alla stessa ora e nello stesso luogo, dallo spettacolo SUPERABILE, sempre della compagnia Teatro La ribalta. </p>
+</EventLayout>
